@@ -34,9 +34,9 @@ class Transactions:
         if not self.rows:
             return
         for idx, row in enumerate(self.rows):
-            number = row.get("Transaction", 0)
-            if number[0] == "-":
-                self.debit_amout -= float(number[1:])
+            number = float(row.get("Transaction", 0))
+            if number < 0:
+                self.debit_amout += number
                 self.debit_amount_count += 1
 
     def get_avg_debit_balance(self):
@@ -49,9 +49,9 @@ class Transactions:
         if not self.rows:
             return
         for idx, row in enumerate(self.rows):
-            number = row.get("Transaction", 0)
-            if number[0] == "+":
-                self.credit_amount += float(number[1:])
+            number = float(row.get("Transaction", 0))
+            if number > 0:
+                self.credit_amount += number
                 self.credit_amount_count += 1
 
     def get_avg_credit_balance(self):
