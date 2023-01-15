@@ -23,4 +23,4 @@ if __name__ == "__main__":
         transactions.months,
     )
     email.create_email_file("result.csv", file_handler)
-    #email.send_email("result.csv")
+    email.send_email("result.csv")
