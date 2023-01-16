@@ -7,6 +7,7 @@ SENDER = 'example@example.com'
 RECEIVER = 'example@example.com'
 USER = 'example@example.com'
 PASS = 'password'
+
 ```
  SENDER and RECEIVER are variables that correspond to the email config.
 
